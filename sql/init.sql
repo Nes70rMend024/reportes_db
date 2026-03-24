@@ -40,3 +40,19 @@ CREATE TABLE reportes_fallos (
     FOREIGN KEY (id_tecnico) REFERENCES tecnicos(id_tecnicos)
         ON DELETE SET NULL
 );
+
+------ Insertar datos de ejemplo ------
+INSERT INTO aulas (nombre, edificio) VALUES
+('Aula 101', 'Edificio A'),
+('Aula 202', 'Edificio B'),
+('Laboratorio 1', 'Edificio C');
+
+INSERT INTO estados_pizarra (nombre) VALUES
+('Operativa'),
+('En Reparación'),
+('Fuera de Servicio');
+
+INSERT INTO pizarras (id_aula, id_estado) VALUES
+(1, 1),
+(2, 1),
+(3, 1);
