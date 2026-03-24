@@ -1,3 +1,4 @@
+--V1
 CREATE TABLE aulas (
     id_aulas SERIAL PRIMARY KEY,
     nombre VARCHAR(50),
@@ -41,7 +42,7 @@ CREATE TABLE reportes_fallos (
         ON DELETE SET NULL
 );
 
------- Insertar datos de ejemplo ------
+-- V2 ---- Insertar datos de ejemplo ------
 INSERT INTO aulas (nombre, edificio) VALUES
 ('Aula 101', 'Edificio A'),
 ('Aula 202', 'Edificio B'),
@@ -56,3 +57,15 @@ INSERT INTO pizarras (id_aula, id_estado) VALUES
 (1, 1),
 (2, 1),
 (3, 1);
+
+--V3 Datos restantes de ejemplo
+INSERT INTO tecnicos (nombre, especialidad) VALUES
+('Carlos López', 'Hardware'),
+('Ana Martínez', 'Electrónica'),
+('Luis Gómez', 'Sistemas');
+
+INSERT INTO reportes_fallos (fecha, descripcion, id_pizarra, id_tecnico) VALUES
+(CURRENT_DATE, 'No enciende', 1, 1),
+(CURRENT_DATE, 'Pantalla dañada', 2, 2),
+(CURRENT_DATE, 'Problema de conexión', 3, 3);
+
